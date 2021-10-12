@@ -1,0 +1,58 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+from threading import Thread
+import QT_Helpers as qt_helper
+import time
+
+globalMsgWindow = None     # global to hold universal message window
+
+class MsgWindow(QtWidgets.QMainWindow):
+    """
+    This class will enable small, temporary, windows to circumvent
+    issues with using QMessageBoxes from threads
+    """
+    
+    def __init__(self,parent=None,width=500,height=150):
+        super().__init__()
+#         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.width = width
+        self.height = height
+        self.setFixedSize(width, height)
+        
+        # Center the Message Box
+        qtRectangle = self.frameGeometry()
+        centerPoint = QtWidgets.QDesktopWidget().availableGeometry().center()
+        qtRectangle.moveCenter(centerPoint)
+        self.move(qtRectangle.topLeft())
+        
+        self.msgLabel = QtWidgets.QLabel(self)
+        self.msgLabel.setGeometry(QtCore.QRect(width*0.1, height*0.1, width*0.8, height*0.8))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.msgLabel.setFont(font)
+        self.msgLabel.setObjectName("label_15")
+        self.msgLabel.setText("text")
+        self.msgLabel.setWordWrap(True)
+        self.msgLabel.setAlignment(QtCore.Qt.AlignCenter)
+        
+    def showMsg(self,title='Title',text='text',color='yellow',duration=2,callback = [None,None]):
+        self.setWindowTitle(title)
+        self.msgLabel.setText(text)
+        self.setStyleSheet("background-color: "+str(color))
+        self.show()
+        if duration:
+            try:
+                if callback[0]:
+                    qt_helper.DelayAction(duration,[self.hide,None],[callback[0],callback[1]]).start()
+                else:
+                    qt_helper.DelayAction(duration,[self.hide,None]).start()
+            except Exception as e:
+                print("Encountered Error: ",e)
+        
+        
+        
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow2 = MsgWindow()
+    MainWindow2.showMsg(text="This is a test message.",title="Warning")
+    sys.exit(app.exec_())
