@@ -2,7 +2,7 @@ from datetime import datetime
 from datetime import date
 from busio import I2C
 from gpiozero import Button
-from signal import pause
+#from signal import pause
 from io import BytesIO
 import os, sys
 import time

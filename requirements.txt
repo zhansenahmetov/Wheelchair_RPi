@@ -16,3 +16,4 @@ PyQt5==5.15.4
 pyserial==3.5
 python_dateutil==2.8.2
 smbus==1.1.post2
+setuptools<58

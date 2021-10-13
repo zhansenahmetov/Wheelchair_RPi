@@ -54,3 +54,21 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Mock imports for libraries that were missed in the python environment
+autodoc_mock_imports = ["bluedot",
+                        "PyQt5",
+                        "pymongo",
+                        "spidev",
+                        "bluetooth",
+                        "busio",
+                        "gpiozero",
+                        "concurrent.futures",
+                        "board",
+                        "micropython",
+                        "smbus",
+                        "pynmea2",
+                        "serial",
+                        "pickle5",
+                        "subprocess",
+                        "main_code"]

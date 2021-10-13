@@ -9,7 +9,8 @@ Welcome to Wheelchair_RPi_sphinx's documentation!
 .. toctree::
    :maxdepth: 2
 
-   QT_Helpers
+   GUI_Scripts
+   Helper_funcs
 
 
 

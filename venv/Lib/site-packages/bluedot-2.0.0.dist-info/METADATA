@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: bluedot
+Version: 2.0.0
+Summary: A zero boiler plate bluetooth remote
+Home-page: https://github.com/martinohanlon/BlueDot
+Author: Martin O'Hanlon
+Author-email: martin@ohanlonweb.com
+License: MIT
+Keywords: raspberry,pi,raspberry pi,bluetooth,remote,android
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Education
+Classifier: Topic :: Communications
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+
+# Blue Dot
+
+[Blue Dot](http://bluedot.readthedocs.io/en/latest/) allows you to control your Raspberry Pi projects wirelessly - it's a Bluetooth remote and zero boiler plate (super simple to use :) Python library.
+
+## Getting started
+
+1. Install
+
+```
+sudo pip3 install bluedot
+```
+
+2. Get the [Android Blue Dot app](http://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot) or use the [Python Blue Dot app](http://bluedot.readthedocs.io/en/latest/bluedotpythonapp.html)
+
+3. Pair your Raspberry Pi
+
+4. Write some code
+
+```python
+from bluedot import BlueDot
+bd = BlueDot()
+bd.wait_for_press()
+print("You pressed the blue dot!")
+```
+
+5. Press the Blue Dot
+
+See the [getting started guide](http://bluedot.readthedocs.io/en/latest/gettingstarted.html) to 'get started'!
+
+## More
+
+Blue Dot is more than just one button. You can create as many buttons as you want and change their appearance to create your own controller.
+
+Every button is also a joystick. You can tell if a button was pressed in the middle, on the top, bottom, left or right. You can easily create a BlueDot controlled Robot.
+
+Why be restricted by such vague positions like top and bottom though: you can get the exact (x, y) position or even the angle and distance from centre where the button was pressed.
+
+Its not all about when the button was pressed either - pressed, released or moved they all work.
+
+A button can be any colour, square, given give or hidden!
+
+You can press it, slide it, swipe it, rotate it - one blue circle can do a lot!
+
+## Even more
+
+The [online documentation](http://bluedot.readthedocs.io/en/latest/) describes how to use Blue Dot and the Python library including recipes and ideas.
+
+
+
