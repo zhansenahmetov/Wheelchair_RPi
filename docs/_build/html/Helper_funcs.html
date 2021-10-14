@@ -74,12 +74,38 @@ from the args and kwargs arguments, respectively.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="WMsgWindow.MsgWindow">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WMsgWindow.</span></span><span class="sig-name descname"><span class="pre">MsgWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WMsgWindow.MsgWindow" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class will enable small, temporary, windows to circumvent
+<dd><p>This class will enable a small, temporary, window to circumvent
 issues with using QMessageBoxes from threads</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="WMsgWindow.MsgWindow.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WMsgWindow.MsgWindow.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This function initializes the pop-up message window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – Width of the window</p></li>
+<li><p><strong>height</strong> – Height of the window</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WMsgWindow.MsgWindow.showMsg">
+<span class="sig-name descname"><span class="pre">showMsg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'text'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yellow'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WMsgWindow.MsgWindow.showMsg" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can be called to show the pop-up window to display a message</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Title of the pop-up window</p></li>
+<li><p><strong>text</strong> – Message content of the pop-up window</p></li>
+<li><p><strong>color</strong> – Background color of the pop-up window (in CSS format: ‘background-color: &lt;color&gt;’)</p></li>
+<li><p><strong>duration</strong> – Pop-up window duration in seconds</p></li>
+<li><p><strong>callback</strong> – Function to call at the end of pop-up duration [function,parameter]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

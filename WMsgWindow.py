@@ -7,11 +7,17 @@ globalMsgWindow = None     # global to hold universal message window
 
 class MsgWindow(QtWidgets.QMainWindow):
     """
-    This class will enable small, temporary, windows to circumvent
+    This class will enable a small, temporary, window to circumvent
     issues with using QMessageBoxes from threads
     """
     
     def __init__(self,parent=None,width=500,height=150):
+        """
+        This function initializes the pop-up message window
+
+        :param width: Width of the window
+        :param height: Height of the window
+        """
         super().__init__()
 #         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.width = width
@@ -35,6 +41,15 @@ class MsgWindow(QtWidgets.QMainWindow):
         self.msgLabel.setAlignment(QtCore.Qt.AlignCenter)
         
     def showMsg(self,title='Title',text='text',color='yellow',duration=2,callback = [None,None]):
+        """
+        This function can be called to show the pop-up window to display a message
+
+        :param title: Title of the pop-up window
+        :param text: Message content of the pop-up window
+        :param color: Background color of the pop-up window (in CSS format: 'background-color: <color>')
+        :param duration: Pop-up window duration in seconds
+        :param callback: Function to call at the end of pop-up duration [function,parameter]
+        """
         self.setWindowTitle(title)
         self.msgLabel.setText(text)
         self.setStyleSheet("background-color: "+str(color))

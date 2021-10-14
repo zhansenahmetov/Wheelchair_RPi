@@ -1,3 +1,7 @@
+"""
+This file is responsible for creating the charging page of the Wheelchair's GUI
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Window2_col_new.ui'
@@ -29,9 +33,17 @@ Vnom=25
 StringStyle="border-top-left-radius: 35px;\n border-top-right-radius : 35px;\n border-bottom-left-radius :35px;\n border-bottom-right-radius :35px;"
 
 class Ui_MainWindow2(object):
+    """
+    This class creates the main window that is used as the charging 'tab'
+    """
     global listB, Inom, Vnom
 
     def data_received(data):
+        """
+        This function interprets data received over bluetooth connection from the Raspberry Pi on the Charger's side
+
+        :param data: numeral instruction corresponding to the established communication lookup table
+        """
         print(data)
         #tC.join()
         #listB[2].join()
@@ -95,6 +107,11 @@ class Ui_MainWindow2(object):
             wm.globalMsgWindow.showMsg(duration=3,title="Informational Message",text='Charger has been unplugged by the user!',callback=[listB[1].DisconnectFromCharger,None])
             
     def connect_BLU(self,c):
+        """
+        This function will attempt to initiate a bluetooth connection
+
+        :param c: Object reference on which to create a bluetooth connection
+        """
         
         c.connect()
         
@@ -102,17 +119,32 @@ class Ui_MainWindow2(object):
         qt_helper.DelayAction(0.1,[self.setState,State.CONNECTED_TO_CHARGER]).start()
         
     def disconnect_BLU(self,c):
+        """
+        This function will terminate a bluetooth connection
+
+        :param c: Object reference with an active bluetooth connection
+        """
         c.disconnect()
         # delay to clear queue'd mouseevents
         qt_helper.DelayAction(1,[self.setState,State.CHARGER_AVAILABLE]).start()
         
     def send_BLU(self,c,data):
+        """
+        This function will send data over an active bluetooth connection
+
+        :param c: Object reference with an active bluetooth connection
+        :param data: Data to send over the connection
+        """
         c.send(data)
     
     c = BluetoothClient(bd_addr,data_received, auto_connect=False)
     listB.append(c)
 
     def stateUpdate(self):
+        """
+        This function is the 'brains' of the state machine on the Wheelchair side.  Each time it is called it update the
+        relevent GUI components correspponding to the active state as defined by :obj:`StateClass.State`
+        """
         # Defaults (QT will update after function corrects these):
 #         self.label_connect.setText("Disconnect")
 #         self.label_start.setText("Start Charging")
