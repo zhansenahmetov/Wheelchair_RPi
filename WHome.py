@@ -1,3 +1,7 @@
+"""
+This file is responsible for creating the Home page of the Wheelchair GUI
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Window_col_new.ui'
@@ -15,7 +19,15 @@ import time
 import QT_Helpers as qt_helper
 
 class Ui_MainWindow(object):
+    """
+    This class creates the main window that is used as the Home 'tab'
+    """
     def setupUi(self, MainWindow):
+        """
+        This function will set up the UI elements that will be present on this window
+
+        :param MainWindow: the window on which to build the elements
+        """
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 480)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -46,54 +58,7 @@ class Ui_MainWindow(object):
         self.label_charging = qt_helper.makeTabLabel(self,163,0,161,71,152,21,"label_charging","Charging")
         self.label_upload = qt_helper.makeTabLabel(self,326,0,161,71,152,21,"label_charging","Upload")
         self.label_testing = qt_helper.makeTabLabel(self,489,0,161,71,152,21,"label_testing","Test Page")
-        
-        
-#         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_2.setGeometry(QtCore.QRect(0, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_2.setFont(font)
-#         self.label_2.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_2.setStyleSheet("\n"
-# "color: rgb(0, 0, 0);\n"
-# "background-color: rgb(202, 202, 202);\n"
-# "")
-#         self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_2.setObjectName("label_2")
-#         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_3.setGeometry(QtCore.QRect(163, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_3.setFont(font)
-#         self.label_3.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_3.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_3.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_3.setObjectName("label_3")
-#         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_4.setGeometry(QtCore.QRect(489, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_4.setFont(font)
-#         self.label_4.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_4.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_4.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_4.setObjectName("label_4")
-#         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_5.setGeometry(QtCore.QRect(326, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_5.setFont(font)
-#         self.label_5.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_5.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_5.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_5.setObjectName("label_5")
+
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(300, 290, 161, 41))
         font = QtGui.QFont()
@@ -132,18 +97,22 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
+        """
+        This function retranslates the text content of some components
+
+        :param MainWindow: parent window of the target components
+        """
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "WELCOME, JOHN DOE!"))
-#         self.label_2.setText(_translate("MainWindow", "Home"))
-#         self.label_3.setText(_translate("MainWindow", "Charging"))
-#         self.label_4.setText(_translate("MainWindow", "Test Page"))
-#         self.label_5.setText(_translate("MainWindow", "Upload"))
         self.label_6.setText(_translate("MainWindow", "Battery Level"))
         t = Thread(target = self._readParam)
         t.start()
         
     def _readParam(self):
+        """
+        This function will update the battery icon using the BMS values
+        """
 
         while True:
             
@@ -159,6 +128,9 @@ class Ui_MainWindow(object):
             
 
 if __name__ == "__main__":
+    """
+    This statement is for testing this file independently
+    """
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()

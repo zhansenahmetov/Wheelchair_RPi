@@ -61,11 +61,11 @@
 </section>
 <section id="module-WCharging">
 <span id="wcharging-py"></span><h2>WCharging.py<a class="headerlink" href="#module-WCharging" title="Permalink to this headline">¶</a></h2>
-<p>This file is responsible for creating the charging page of the Wheelchair’s GUI</p>
+<p>This file is responsible for creating the Charging page of the Wheelchair’s GUI</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WCharging.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow2</span></span><a class="headerlink" href="#WCharging.Ui_MainWindow2" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class creates the main window that is used as the charging ‘tab’</p>
+<dd><p>This class creates the main window that is used as the Charging ‘tab’</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.ConnectToCharger">
 <span class="sig-name descname"><span class="pre">ConnectToCharger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.ConnectToCharger" title="Permalink to this definition">¶</a></dt>
@@ -99,7 +99,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2._readParam">
 <span class="sig-name descname"><span class="pre">_readParam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2._readParam" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function will read the Voltage and Current values from the BMS then update the corresponding LCD elements and battery icon</p>
+<dd><p>This function will read the BMS Voltage and Current values from the data file then update the corresponding LCD elements and battery icon</p>
 </dd></dl>
 
 <dl class="py method">
@@ -243,6 +243,47 @@ relevent GUI components correspponding to the active state as defined by <a clas
 </section>
 <section id="module-WHome">
 <span id="whome-py"></span><h2>WHome.py<a class="headerlink" href="#module-WHome" title="Permalink to this headline">¶</a></h2>
+<p>This file is responsible for creating the Home page of the Wheelchair GUI</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="WHome.Ui_MainWindow">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WHome.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow</span></span><a class="headerlink" href="#WHome.Ui_MainWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class creates the main window that is used as the Home ‘tab’</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WHome.Ui_MainWindow.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#WHome.Ui_MainWindow.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WHome.Ui_MainWindow._readParam">
+<span class="sig-name descname"><span class="pre">_readParam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WHome.Ui_MainWindow._readParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will update the battery icon using the BMS values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WHome.Ui_MainWindow.retranslateUi">
+<span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WHome.Ui_MainWindow.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function retranslates the text content of some components</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – parent window of the target components</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WHome.Ui_MainWindow.setupUi">
+<span class="sig-name descname"><span class="pre">setupUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WHome.Ui_MainWindow.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will set up the UI elements that will be present on this window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – the window on which to build the elements</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-WTest">
 <span id="wtest-py"></span><h2>WTest.py<a class="headerlink" href="#module-WTest" title="Permalink to this headline">¶</a></h2>

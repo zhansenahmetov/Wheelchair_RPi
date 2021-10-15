@@ -1,5 +1,5 @@
 """
-This file is responsible for creating the charging page of the Wheelchair's GUI
+This file is responsible for creating the Charging page of the Wheelchair's GUI
 """
 
 # -*- coding: utf-8 -*-
@@ -34,7 +34,7 @@ StringStyle="border-top-left-radius: 35px;\n border-top-right-radius : 35px;\n b
 
 class Ui_MainWindow2(object):
     """
-    This class creates the main window that is used as the charging 'tab'
+    This class creates the main window that is used as the Charging 'tab'
     """
     global listB, Inom, Vnom
 
@@ -536,7 +536,7 @@ class Ui_MainWindow2(object):
         
     def _readParam(self):
         """
-        This function will read the Voltage and Current values from the BMS then update the corresponding LCD elements and battery icon
+        This function will read the BMS Voltage and Current values from the data file then update the corresponding LCD elements and battery icon
         """
         V = 0
         I = 100
