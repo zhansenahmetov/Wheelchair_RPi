@@ -55,11 +55,35 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="Login_file.Login.clearPin">
+<span class="sig-name descname"><span class="pre">clearPin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Login.clearPin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function clears the text field</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Login_file.Login.enterPin">
+<span class="sig-name descname"><span class="pre">enterPin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Login.enterPin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function enters a number from the pin pad into the text field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> – The number to enter from the pin pad</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Login_file.Login.handleLogin">
+<span class="sig-name descname"><span class="pre">handleLogin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Login.handleLogin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function verifies that the password entered by the user matches the established password</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="Login_file.Login.retranslateUi">
 <span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Login.retranslateUi" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
+<dd><p>This function will reassign some components’ textual content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – the parent window of the target components</p>
 </dd>
 </dl>
 </dd></dl>
@@ -69,10 +93,17 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="Login_file.Window">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Login_file.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Window" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
+<dd><p>This class launches a window upon successful login during an independent file test</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="Login_file.Window.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Login_file.Window.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This function initializes the test window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> – parent of the window</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -335,8 +366,7 @@ relevent GUI components corresponding to the active state as defined by <a class
 <dl class="py method">
 <dt class="sig sig-object py" id="WTest.Ui_MainWindow3.clearPin">
 <span class="sig-name descname"><span class="pre">clearPin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.clearPin" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function clears the focused text field
-:return:</p>
+<dd><p>This function clears the focused text field</p>
 </dd></dl>
 
 <dl class="py method">
