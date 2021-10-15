@@ -4,13 +4,20 @@
     <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StateClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/StateClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/Helper_funcs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/Helper_funcs.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_build/html/Helper_funcs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/Helper_funcs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_code.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

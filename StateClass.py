@@ -11,7 +11,7 @@ class State(Enum):
     This class contains enumerations representing each of the wheelchair states
 
         ::
-            
+
             Cross-platform (Wheelchair/Charger) States:
                 CHARGER_UNAVAILABLE = 0
                 CHARGER_AVAILABLE = 1

@@ -11,6 +11,7 @@ Welcome to Wheelchair_RPi_sphinx's documentation!
 
    GUI_Scripts
    Helper_funcs
+   Main_funcs
 
 
 

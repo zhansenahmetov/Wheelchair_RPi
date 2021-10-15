@@ -1,3 +1,7 @@
+"""
+This file controls sensor measurements for the Wheelchair
+"""
+
 from datetime import datetime
 from datetime import date
 from busio import I2C
