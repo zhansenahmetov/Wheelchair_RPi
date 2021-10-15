@@ -113,10 +113,36 @@ issues with using QMessageBoxes from threads</p>
 </section>
 <section id="module-StateClass">
 <span id="stateclass-py"></span><h2>StateClass.py<a class="headerlink" href="#module-StateClass" title="Permalink to this headline">¶</a></h2>
+<p>This file defines the states available to the Wheelchir</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="StateClass.State">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">StateClass.</span></span><span class="sig-name descname"><span class="pre">State</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#StateClass.State" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
+<dd><p>This class contains enumerations representing each of the wheelchair states</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cross</span><span class="o">-</span><span class="n">platform</span> <span class="p">(</span><span class="n">Wheelchair</span><span class="o">/</span><span class="n">Charger</span><span class="p">)</span> <span class="n">States</span><span class="p">:</span>
+    <span class="n">CHARGER_UNAVAILABLE</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">CHARGER_AVAILABLE</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">CONNECTED_TO_CHARGER</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CHARGER_COMPATIBLE</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">CHARGER_INCOMPATIBLE</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">AWAITING_CONNECTION</span><span class="o">=</span> <span class="mi">5</span>
+    <span class="n">READY_TO_CHARGE</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">CHARGING_IN_PROGRESS</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">CHARGER_FAULTY</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">WC_FULLY_CHARGED</span> <span class="o">=</span> <span class="mi">9</span>
+    <span class="n">BATTERY_FAULTY</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">TERMINATED_BY_USER</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="p">(</span><span class="mi">12</span> <span class="ow">is</span> <span class="n">missing</span> <span class="n">because</span> <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">an</span> <span class="n">active</span> <span class="n">state</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Wheelchair</span> <span class="n">side</span><span class="p">)</span>
+    <span class="n">CONNECTING_TO_CHARGER</span> <span class="o">=</span> <span class="mi">13</span>
+    <span class="n">REQUESTED</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="n">AWAITING_DISCONNECTION</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">Waiting</span> <span class="n">states</span><span class="p">:</span>
+    <span class="n">STARTING_CHARGE</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">DISCONNECTING</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </section>

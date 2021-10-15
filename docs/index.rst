@@ -7,7 +7,7 @@ Welcome to Wheelchair_RPi_sphinx's documentation!
 =================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    GUI_Scripts
    Helper_funcs
