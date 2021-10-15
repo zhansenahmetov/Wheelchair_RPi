@@ -1,3 +1,7 @@
+"""
+This file is responsible for organizing all of the GUI pages and threads running on the Wheelchair Raspberry Pi, it is
+essentially the 'main' of this Wheelchair project
+"""
 from PyQt5 import QtCore, QtGui, QtWidgets
 from WHome import Ui_MainWindow #New1
 from WCharging import Ui_MainWindow2 #New2
@@ -14,6 +18,11 @@ import StateClass as sc
 from StateClass import State
     
 def showWindow(targetWindow):
+    """
+    This function will show a target window while hiding all other windows, it is the basis of the tab-switching capability
+
+    :param targetWindow: target window to show over all others
+    """
 #     print("attempting to change tabs, state: ",sc.WCState)
     if(sc.WCState == State.CHARGER_AVAILABLE
            or sc.WCState == State.CHARGER_UNAVAILABLE):
@@ -24,6 +33,9 @@ def showWindow(targetWindow):
                 win.hide()
 
 if __name__ == "__main__":
+    """
+    This statement will make sure the necessary pages are initialized when this file is run as the 'main'
+    """
     import sys
     app = QtWidgets.QApplication(sys.argv)
     wm.globalMsgWindow = wm.MsgWindow()

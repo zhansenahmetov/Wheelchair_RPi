@@ -1,3 +1,7 @@
+"""
+This file is responsible for creating the Upload page in the Wheelchair GUI
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Window4_col_new.ui'
@@ -23,9 +27,17 @@ import WMsgWindow as wm
 enable_upload = True
 
 class Ui_MainWindow4(object):
+    """
+    This class creates the Wheelchair GUI's Upload 'tab'
+    """
     
     #send CSV file to mongodb
-    def sendCSV(self, event):
+    def sendCSV(self, event=None):
+        """
+        This function sends the CSV of recorded data to the mongo database
+
+        :param event: unused parameter that may be sent when initiated from a button call
+        """
         global enable_upload
         #read the name of the most recent created csv, real time csv file
         if enable_upload:
@@ -56,10 +68,18 @@ class Ui_MainWindow4(object):
                 print("no internet connection: ",e)
         
     def enableUpload(self):
+        """
+        This function changes the value of the global variable that enables the upload to True
+        """
         global enable_upload
         enable_upload = True
     
     def setupUi(self, MainWindow):
+        """
+        This function will set up the UI elements that will be present on this window
+
+        :param MainWindow: the window on which to build the elements
+        """
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 480)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -70,32 +90,7 @@ class Ui_MainWindow4(object):
         self.label_upload = qt_helper.makeTabLabel(self,326,0,161,71,202,21,"label_charging","Upload")
         self.label_testing = qt_helper.makeTabLabel(self,489,0,161,71,152,21,"label_testing","Test Page")
         
-        
-        
-#         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_3.setGeometry(QtCore.QRect(164, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_3.setFont(font)
-#         self.label_3.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_3.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_3.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_3.setObjectName("label_3")
-#         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_5.setGeometry(QtCore.QRect(327, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_5.setFont(font)
-#         self.label_5.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_5.setStyleSheet("\n"
-# "color: rgb(0, 0, 0);\n"
-# "background-color: rgb(202, 202, 202);\n"
-# "")
-#         self.label_5.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_5.setObjectName("label_5")
+
         self.lcdNumber = QtWidgets.QLCDNumber(self.centralwidget)
         self.lcdNumber.setGeometry(QtCore.QRect(691, 0, 111, 41))
         font = QtGui.QFont()
@@ -104,28 +99,7 @@ class Ui_MainWindow4(object):
         self.lcdNumber.setProperty("value", 12.0)
         self.lcdNumber.setProperty("intValue", 12)
         self.lcdNumber.setObjectName("lcdNumber")
-#         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_2.setGeometry(QtCore.QRect(1, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_2.setFont(font)
-#         self.label_2.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_2.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_2.setObjectName("label_2")
-#         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-#         self.label_4.setGeometry(QtCore.QRect(490, 0, 161, 71))
-#         font = QtGui.QFont()
-#         font.setPointSize(21)
-#         self.label_4.setFont(font)
-#         self.label_4.setLayoutDirection(QtCore.Qt.LeftToRight)
-#         self.label_4.setStyleSheet("color: rgb(0, 0, 0);\n"
-# "background-color: rgb(152, 152, 152);")
-#         self.label_4.setFrameShape(QtWidgets.QFrame.NoFrame)
-#         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-#         self.label_4.setObjectName("label_4")
+
         self.label_12 = QtWidgets.QLabel(self.centralwidget)
         self.label_12.setGeometry(QtCore.QRect(310, 180, 171, 71))
         font = QtGui.QFont()
@@ -172,22 +146,17 @@ class Ui_MainWindow4(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        
-        
-#         #create message box
-#         self.msg = QMessageBox()
-#         # Set the information icon
-#         self.msg.setIcon(QMessageBox.Information)
-#         # Set the main message
-#         self.msg.setText("The file has been sent successfully.")
-#         # Set the title of the window
-#         self.msg.setWindowTitle("Informational Message")
 
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
+        """
+        This function will reassign some components' textual content
+
+        :param MainWindow: the parent window of the target components
+        """
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 #         self.label_3.setText(_translate("MainWindow", "Charging"))
@@ -206,6 +175,9 @@ class Ui_MainWindow4(object):
         self.label_12.mouseReleaseEvent = self.sendCSV
 
 if __name__ == "__main__":
+    """
+    This statement is for testing the file independently
+    """
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()

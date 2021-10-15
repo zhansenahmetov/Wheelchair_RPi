@@ -98,7 +98,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         """
-        This function retranslates the text content of some components
+        This function will reassign some components' textual content
 
         :param MainWindow: parent window of the target components
         """

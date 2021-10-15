@@ -1,3 +1,6 @@
+"""
+This file is responsible for creating the Test page in the Wheelchair GUI
+"""
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'WindowNew_col.ui'
@@ -20,8 +23,14 @@ import QT_Helpers as qt_helper
 
 
 class Ui_MainWindow3(object):
+    """
+    This class creates the Wheelchair GUI's Test 'tab'
+    """
     
     def sendStart(self):
+        """
+        This function will send a start command from the wheelchair to the charger with the provided V/I input and will receive the Charger's response
+        """
         # configure client BT
         bd_addr = "E4:5F:01:41:4D:EA"
         port = 1
@@ -51,6 +60,10 @@ class Ui_MainWindow3(object):
             self.msg3.show()
         
     def sendStop(self):
+        """
+        This function will send a stop command from the wheelchair to the charger
+        :return:
+        """
         # configure client BT
         bd_addr = "E4:5F:01:41:4D:EA"
         port = 1
@@ -78,6 +91,11 @@ class Ui_MainWindow3(object):
             self.msg2.show()
     
     def setupUi(self, MainWindow):
+        """
+        This function will set up the UI elements that will be present on this window
+
+        :param MainWindow: the window on which to build the elements
+        """
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 480)
         
@@ -85,14 +103,6 @@ class Ui_MainWindow3(object):
         self.centralwidget.setObjectName("centralwidget")
         font = QtGui.QFont()
         font.setPointSize(25)
-#         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-#         self.pushButton.setGeometry(QtCore.QRect(0, 0, 161, 51))
-#         self.pushButton.setFont(font)
-#         self.pushButton.setObjectName("pushButton")
-#         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-#         self.pushButton_2.setGeometry(QtCore.QRect(180, 0, 161, 51))
-#         self.pushButton_2.setFont(font)
-#         self.pushButton_2.setObjectName("pushButton_2")
         
         # Tab Navigation:
         self.label_home = qt_helper.makeTabLabel(self,0,0,161,71,152,21,"label_home","Home")
@@ -128,12 +138,6 @@ class Ui_MainWindow3(object):
         self.label_pic1.setGeometry(QtCore.QRect(620, 360, 180, 90))
         self.label_pic1.setText("")
         self.label_pic1.setObjectName("label_pic1")
-#         self.label = QtWidgets.QLabel(self.centralwidget)
-#         self.label.setGeometry(QtCore.QRect(360, 0, 471, 81))
-#         font = QtGui.QFont()
-#         font.setPointSize(25)
-#         self.label.setFont(font)
-#         self.label.setObjectName("label")
         font = QtGui.QFont()
         font.setPointSize(15)
         self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
@@ -243,9 +247,19 @@ class Ui_MainWindow3(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def setLineFocus(self,lineObj):
+        """
+        This function sets the line focus of the pin pad to the specified lineEdit object
+
+        :param lineObj: the QLineEdit object to focus
+        """
         self.lineEditFocus = lineObj
 
     def enterNum(self,n):
+        """
+        This function enters a number from the pin pad into the focused text field
+
+        :param n: The number to enter from the pin pad
+        """
         self.lineEditFocus.setText(self.lineEditFocus.text()+str(n))
 #         if self.lineEdit.hasFocus():
 #             self.lineEdit.setText(self.lineEdit.text()+str(n))
@@ -253,13 +267,25 @@ class Ui_MainWindow3(object):
 #             self.lineEdit_2.setText(self.lineEdit_2.text()+str(n))
 
     def decimalPin(self):
+        """
+        This function enters a decimal from the pin pad into the focused text field and ensures there are no duplicate decimals
+        """
         if '.' not in self.lineEditFocus.text():
             self.lineEditFocus.setText(self.lineEditFocus.text()+".")
             
     def clearPin(self):
+        """
+        This function clears the focused text field
+        :return:
+        """
         self.lineEditFocus.setText("")
 
     def retranslateUi(self, MainWindow):
+        """
+        This function will reassign some components' textual content
+
+        :param MainWindow: parent window of the target components
+        """
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 #         self.pushButton.setText(_translate("MainWindow", "Home"))
@@ -282,6 +308,9 @@ class Ui_MainWindow3(object):
         t.start()
         
     def _readParam(self):
+        """
+        This function will read the Voltage and Current values from the data file every 5 seconds and update the corresponding labels
+        """
         V = 0
         I = 100
         while True:
@@ -300,6 +329,9 @@ class Ui_MainWindow3(object):
 
 
 if __name__ == "__main__":
+    """
+    This statement is for testing the file independently
+    """
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()

@@ -1,3 +1,6 @@
+"""
+This file is responsible for creating the login page of the Wheelchair GUI
+"""
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 import os
@@ -15,7 +18,15 @@ import WMsgWindow as wm
 # from mainwindow import Ui_MainWindow
 
 class Login(QtWidgets.QDialog):
+    """
+    This class creates the login dialog to precede the other GUI pages
+    """
     def __init__(self, parent=None):
+        """
+        This function will initialized the login page
+
+        :param parent: the parent upon which to establish the login page
+        """
         super(Login, self).__init__(parent)
         self.lineEdit = QtWidgets.QLineEdit(self)
         self.lineEdit.setGeometry(QtCore.QRect(280, 15, 240, 61))
@@ -103,6 +114,10 @@ class Login(QtWidgets.QDialog):
         self.retranslateUi()
     
     def retranslateUi(self):
+        """
+        
+        :return:
+        """
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Login Page"))
         self.lineEdit.setPlaceholderText(_translate("Dialog", "PIN Number"))

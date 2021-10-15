@@ -143,7 +143,7 @@ class Ui_MainWindow2(object):
     def stateUpdate(self):
         """
         This function is the 'brains' of the state machine on the Wheelchair side.  Each time it is called it updates the
-        relevent GUI components correspponding to the active state as defined by :obj:`StateClass.State`
+        relevent GUI components corresponding to the active state as defined by :obj:`StateClass.State`
         """
         # Defaults (QT will update after function corrects these):
 #         self.label_connect.setText("Disconnect")
@@ -559,9 +559,11 @@ class Ui_MainWindow2(object):
             self.progressBar.setProperty("value", num3)
             time.sleep(5)
         
-    def StartStopCharge(self):
+    def StartStopCharge(self,event=None):
         """
         This function will Start or stop charging depending on the current state (this function is directly linked to the start/stop button)
+
+        :param event: unused parameter that may be sent when initiated from a button call
         """
         # Start Charging
         if sc.WCState == State.READY_TO_CHARGE:
@@ -576,9 +578,11 @@ class Ui_MainWindow2(object):
             self.setState(State.TERMINATED_BY_USER)  
             self.send_BLU(listB[0],data)
         
-    def ConnectToCharger(self):
+    def ConnectToCharger(self, event=None):
         """
         This function will initiate a connection or disconnect from the charger depending on the current state (this function is directly linked to the connect/disconnect button)
+
+        :param event: unused parameter that may be sent when initiated from a button call
         """
 #         print("connect clicked ",sc.WCState)
         if sc.WCState == State.CHARGER_AVAILABLE:

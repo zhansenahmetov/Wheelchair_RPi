@@ -68,8 +68,13 @@
 <dd><p>This class creates the main window that is used as the Charging ‘tab’</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.ConnectToCharger">
-<span class="sig-name descname"><span class="pre">ConnectToCharger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.ConnectToCharger" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ConnectToCharger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.ConnectToCharger" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will initiate a connection or disconnect from the charger depending on the current state (this function is directly linked to the connect/disconnect button)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – unused parameter that may be sent when initiated from a button call</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -86,8 +91,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.StartStopCharge">
-<span class="sig-name descname"><span class="pre">StartStopCharge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.StartStopCharge" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">StartStopCharge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.StartStopCharge" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will Start or stop charging depending on the current state (this function is directly linked to the start/stop button)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – unused parameter that may be sent when initiated from a button call</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py attribute">
@@ -235,7 +245,7 @@
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.stateUpdate">
 <span class="sig-name descname"><span class="pre">stateUpdate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.stateUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is the ‘brains’ of the state machine on the Wheelchair side.  Each time it is called it updates the
-relevent GUI components correspponding to the active state as defined by <a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a></p>
+relevent GUI components corresponding to the active state as defined by <a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -263,7 +273,7 @@ relevent GUI components correspponding to the active state as defined by <a clas
 <dl class="py method">
 <dt class="sig sig-object py" id="WHome.Ui_MainWindow.retranslateUi">
 <span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WHome.Ui_MainWindow.retranslateUi" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function retranslates the text content of some components</p>
+<dd><p>This function will reassign some components’ textual content</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>MainWindow</strong> – parent window of the target components</p>
@@ -287,12 +297,166 @@ relevent GUI components correspponding to the active state as defined by <a clas
 </section>
 <section id="module-WTest">
 <span id="wtest-py"></span><h2>WTest.py<a class="headerlink" href="#module-WTest" title="Permalink to this headline">¶</a></h2>
+<p>This file is responsible for creating the Test page in the Wheelchair GUI</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WTest.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow3</span></span><a class="headerlink" href="#WTest.Ui_MainWindow3" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class creates the Wheelchair GUI’s Test ‘tab’</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#WTest.Ui_MainWindow3.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3._readParam">
+<span class="sig-name descname"><span class="pre">_readParam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3._readParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will read the Voltage and Current values from the data file every 5 seconds and update the corresponding labels</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.clearPin">
+<span class="sig-name descname"><span class="pre">clearPin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.clearPin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function clears the focused text field
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.decimalPin">
+<span class="sig-name descname"><span class="pre">decimalPin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.decimalPin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function enters a decimal from the pin pad into the focused text field and ensures there are no duplicate decimals</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.enterNum">
+<span class="sig-name descname"><span class="pre">enterNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.enterNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function enters a number from the pin pad into the focused text field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> – The number to enter from the pin pad</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.retranslateUi">
+<span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will reassign some components’ textual content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – parent window of the target components</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.sendStart">
+<span class="sig-name descname"><span class="pre">sendStart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.sendStart" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will send a start command from the wheelchair to the charger with the provided V/I input and will receive the Charger’s response</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.sendStop">
+<span class="sig-name descname"><span class="pre">sendStop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.sendStop" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will send a stop command from the wheelchair to the charger
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.setLineFocus">
+<span class="sig-name descname"><span class="pre">setLineFocus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lineObj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.setLineFocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function sets the line focus of the pin pad to the specified lineEdit object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lineObj</strong> – the QLineEdit object to focus</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WTest.Ui_MainWindow3.setupUi">
+<span class="sig-name descname"><span class="pre">setupUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WTest.Ui_MainWindow3.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will set up the UI elements that will be present on this window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – the window on which to build the elements</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-WUpload">
 <span id="wupload-py"></span><h2>WUpload.py<a class="headerlink" href="#module-WUpload" title="Permalink to this headline">¶</a></h2>
+<p>This file is responsible for creating the Upload page in the Wheelchair GUI</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WUpload.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow4</span></span><a class="headerlink" href="#WUpload.Ui_MainWindow4" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class creates the Wheelchair GUI’s Upload ‘tab’</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#WUpload.Ui_MainWindow4.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4.enableUpload">
+<span class="sig-name descname"><span class="pre">enableUpload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WUpload.Ui_MainWindow4.enableUpload" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function changes the value of the global variable that enables the upload to True</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4.retranslateUi">
+<span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WUpload.Ui_MainWindow4.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will reassign some components’ textual content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – the parent window of the target components</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4.sendCSV">
+<span class="sig-name descname"><span class="pre">sendCSV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WUpload.Ui_MainWindow4.sendCSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function sends the CSV of recorded data to the mongo database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – unused parameter that may be sent when initiated from a button call</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WUpload.Ui_MainWindow4.setupUi">
+<span class="sig-name descname"><span class="pre">setupUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WUpload.Ui_MainWindow4.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will set up the UI elements that will be present on this window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow</strong> – the window on which to build the elements</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-WWControl">
 <span id="wwcontrol-py"></span><h2>WWControl.py<a class="headerlink" href="#module-WWControl" title="Permalink to this headline">¶</a></h2>
+<p>This file is responsible for organizing all of the GUI pages and threads running on the Wheelchair Raspberry Pi, it is
+essentially the ‘main’ of this Wheelchair project</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="WWControl.showWindow">
+<span class="sig-prename descclassname"><span class="pre">WWControl.</span></span><span class="sig-name descname"><span class="pre">showWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targetWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WWControl.showWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will show a target window while hiding all other windows, it is the basis of the tab-switching capability</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>targetWindow</strong> – target window to show over all others</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
