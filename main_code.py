@@ -50,8 +50,11 @@ months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 
 
 #  
 cmd = 'last -x shutdown | head -1'
-result = subprocess.check_output(cmd, shell=True)
-sd_time = result[43:55].decode()
+try:
+    result = subprocess.check_output(cmd, shell=True)
+    sd_time = result[43:55].decode()
+except Exception as e:
+    print("command failed: ",e)
 
 
 # This function should be called in the main code in the get_I2C() function
