@@ -276,7 +276,6 @@ class Ui_MainWindow3(object):
     def clearPin(self):
         """
         This function clears the focused text field
-        :return:
         """
         self.lineEditFocus.setText("")
 

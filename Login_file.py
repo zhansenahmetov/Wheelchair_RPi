@@ -115,8 +115,9 @@ class Login(QtWidgets.QDialog):
     
     def retranslateUi(self):
         """
+        This function will reassign some components' textual content
 
-        :return:
+        :param MainWindow: the parent window of the target components
         """
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Login Page"))
@@ -131,16 +132,23 @@ class Login(QtWidgets.QDialog):
         
         
     def enterPin(self,n):
+        """
+        This function enters a number from the pin pad into the text field
+
+        :param n: The number to enter from the pin pad
+        """
         self.lineEdit.setText(QtCore.QCoreApplication.translate("Dialog", self.lineEdit.text()+str(n)))
-    
-    def backspacePin(self):
-        if len(self.lineEdit.text()):
-            self.lineEdit.setText(self.lineEdit.text()[:-1])
             
     def clearPin(self):
+        """
+        This function clears the text field
+        """
         self.lineEdit.setText("");
 
     def handleLogin(self):
+        """
+        This function verifies that the password entered by the user matches the established password
+        """
         if (self.lineEdit.text() == '123'):
             self.accept()
             print("Password Accepted")
@@ -153,12 +161,24 @@ class Login(QtWidgets.QDialog):
 #             QtWidgets.QMessageBox.warning(
 #                 self, 'Error', 'Wrong password. Try again or click Forgot password to reset it.')
             
-    def registration(self):
-        print("Registration")
+    # def registration(self):
+    #     """
+    #     This function
+    #     :return:
+    #     """
+    #     print("Registration")
     
 
 class Window(QtWidgets.QMainWindow):
+    """
+    This class launches a window upon successful login during an independent file test
+    """
     def __init__(self, parent=None):
+        """
+        This function initializes the test window
+
+        :param parent: parent of the window
+        """
         super(Window, self).__init__(parent)
 
         # self.ui = Ui_MainWindow()
@@ -176,6 +196,9 @@ class Window(QtWidgets.QMainWindow):
 #                 w.setMask(QtGui.QRegion(r))
 #                 return
 if __name__ == '__main__':
+    """
+    This statement handles independent file testing
+    """
 
     import sys
     app = QtWidgets.QApplication(sys.argv)
