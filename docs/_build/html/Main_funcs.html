@@ -38,6 +38,35 @@
 <section id="module-main_code">
 <span id="main-code-py"></span><h2>main_code.py<a class="headerlink" href="#module-main_code" title="Permalink to this headline">¶</a></h2>
 <p>This file controls sensor measurements for the Wheelchair</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main_code.SoC">
+<span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">SoC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sd_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ibat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vbat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main_code.SoC" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function updates the State Of Charge (SoC)
+:param sd_time: last shutdown time
+:param dt: change in time
+:param ibat: current of the battery
+:param vbat: voltage of the battery</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main_code.get_I2C">
+<span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">get_I2C</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main_code.get_I2C" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function communicates with the IMU, BME680, and BMS sensors over I2C to acquire data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main_code.get_serial">
+<span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">get_serial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main_code.get_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles GPS data acquisition</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main_code.runProgram">
+<span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">runProgram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main_code.runProgram" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function runs the processes when testing the file independently
+:return:</p>
+</dd></dl>
+
 </section>
 </section>
 

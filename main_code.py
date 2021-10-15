@@ -59,6 +59,13 @@ except Exception as e:
 
 # This function should be called in the main code in the get_I2C() function
 def SoC(sd_time, dt, ibat, vbat):
+    """
+    This function updates the State Of Charge (SoC)
+    :param sd_time: last shutdown time
+    :param dt: change in time
+    :param ibat: current of the battery
+    :param vbat: voltage of the battery
+    """
     global update_once
     # Load last SoC from the .pkl file 
     # Open the file in binary mode
@@ -118,6 +125,9 @@ def SoC(sd_time, dt, ibat, vbat):
 
 #######################################this function handles IMU, BME680, and BMS data acquisition#######################################
 def get_I2C():
+    """
+    This function communicates with the IMU, BME680, and BMS sensors over I2C to acquire data
+    """
     #initalize BMS connection
         #MAC address of ESP32
     addr = "A8:03:2A:6A:43:FA"
@@ -386,6 +396,9 @@ def get_I2C():
         
 #######################################this function handles GPS data acquisition#######################################
 def get_serial():
+    """
+    This function handles GPS data acquisition
+    """
     #initialize GPS readings
     lat = 0
     latd = 0
@@ -460,6 +473,10 @@ def get_serial():
 #get_I2C()
 #get_serial()
 def runProgram():
+    """
+    This function runs the processes when testing the file independently
+    :return:
+    """
     with concurrent.futures.ProcessPoolExecutor() as executor:
          f1 = executor.submit(get_I2C)
          f2 = executor.submit(get_serial)
