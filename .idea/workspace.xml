@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WCharging.py" beforeDir="false" afterPath="$PROJECT_DIR$/WCharging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WHome.py" beforeDir="false" afterPath="$PROJECT_DIR$/WHome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WMsgWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/WMsgWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/WTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/WUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WWControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/WWControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/Helper_funcs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/Helper_funcs.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/Helper_funcs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/Helper_funcs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/searchindex.js" afterDir="false" />
-    </list>
+    <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

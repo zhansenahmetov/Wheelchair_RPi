@@ -115,7 +115,7 @@ class Login(QtWidgets.QDialog):
     
     def retranslateUi(self):
         """
-        
+
         :return:
         """
         _translate = QtCore.QCoreApplication.translate
