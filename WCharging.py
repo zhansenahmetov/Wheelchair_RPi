@@ -255,26 +255,56 @@ class Ui_MainWindow2(object):
     def setState(self,state=State.CHARGER_UNAVAILABLE):
         """
         This function sets the state of the Wheelchair and updates components using :obj:`WCharging.Ui_MainWindow2.stateUpdate`
+
+        :param state: The state which the Wheelchair will be set to, available options defined in :obj:`StateClass.State`
         """
         sc.WCState = state
 #         qt_helper.DelayAction(0.5,[self.stateUpdate,None]).start()
         self.stateUpdate()
 
     def setGreen(self,*objs):
+        """
+        This function will change the color of provided objects to green (rgb: 0, 130, 0), using :obj:`WCharging.Ui_MainWindow2.setColor`
+
+        :param objs: objects to change the color of
+        """
         self.setColor(0,130,0,*objs)
         
     def setRed(self,*objs):
+        """
+        This function will change the color of provided objects to red (rgb: 222, 0, 0), using :obj:`WCharging.Ui_MainWindow2.setColor`
+
+        :param objs: objects to change the color of
+        """
         self.setColor(222,0,0,*objs)
         
     def setGrey(self,*objs):
+        """
+        This function will change the color of provided objects to Grey (rgb: 202, 202, 202), using :obj:`WCharging.Ui_MainWindow2.setColor`
+
+        :param objs: objects to change the color of
+        """
         self.setColor(202,202,202,*objs)
             
     def setColor(self,r,g,b,*objs):
+        """
+        This function will change the color of provided objects, given the rgb values
+
+        :param r: rgb value for red
+        :param g: rgb value for green
+        :param b: rgb value for blue
+        :param objs: objects to change the color of
+        """
         for i in objs:
             i.setStyleSheet("QLabel {background-color: rgb("+str(r)+", "+str(g)+", "+str(b)+");\n"
         "color: rgb(255, 255, 255);"+StringStyle+"}")
 
     def setupUi(self, MainWindow2):
+        """
+        This function will set up the UI elements that will be present on this window
+
+        :param MainWindow2: the window on which to build the elements
+        """
         MainWindow2.setObjectName("MainWindow2")
         MainWindow2.resize(800, 480)
         listB.append(self)
@@ -483,6 +513,11 @@ class Ui_MainWindow2(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow2)
 
     def retranslateUi(self, MainWindow2):
+        """
+        This function will reassign some components' textual content
+
+        :param MainWindow2: parent window of the target components
+        """
         _translate = QtCore.QCoreApplication.translate
         MainWindow2.setWindowTitle(_translate("MainWindow2", "MainWindow"))
         self.label.setText(_translate("MainWindow2", "Battery Level"))
@@ -500,6 +535,9 @@ class Ui_MainWindow2(object):
         t.start()
         
     def _readParam(self):
+        """
+        This function will read the Voltage and Current values from the BMS then update the corresponding LCD elements and battery icon
+        """
         V = 0
         I = 100
         while True:
@@ -521,7 +559,10 @@ class Ui_MainWindow2(object):
             self.progressBar.setProperty("value", num3)
             time.sleep(5)
         
-    def StartStopCharge(self, event=None):        
+    def StartStopCharge(self):
+        """
+        This function will Start or stop charging depending on the current state (this function is directly linked to the start/stop button)
+        """
         # Start Charging
         if sc.WCState == State.READY_TO_CHARGE:
             print("start")
@@ -535,7 +576,10 @@ class Ui_MainWindow2(object):
             self.setState(State.TERMINATED_BY_USER)  
             self.send_BLU(listB[0],data)
         
-    def ConnectToCharger(self,event=None):
+    def ConnectToCharger(self):
+        """
+        This function will initiate a connection or disconnect from the charger depending on the current state (this function is directly linked to the connect/disconnect button)
+        """
 #         print("connect clicked ",sc.WCState)
         if sc.WCState == State.CHARGER_AVAILABLE:
             self.setState(State.CONNECTING_TO_CHARGER)
@@ -555,6 +599,9 @@ class Ui_MainWindow2(object):
             self.DisconnectFromCharger()
             
     def DisconnectFromCharger(self):
+        """
+        This function will disconnect the Wheelchair from the Charger (may be internally executed from bluetooth instruction in :obj:`WCharging.Ui_MainWindow2.data_received`
+        """
         self.setState(State.DISCONNECTING)
         try:
             self.disconnect_BLU(listB[0])
@@ -563,15 +610,24 @@ class Ui_MainWindow2(object):
             qt_helper.DelayAction(1,[self.setState,State.CHARGER_AVAILABLE]).start()
 #             self.setState(State.CHARGER_AVAILABLE)
     
-    def RequestCharging(self,event=None):
-        if sc.WCState == State.CONNECTED_TO_CHARGER:
-            # delay to clear queue'd mouseevents
-            self.setState(State.REQUESTED)
-            data="3,"+str(Inom)+","+str(Vnom)
-            self.send_BLU(listB[0],data)
-            print("requested")
+    def RequestCharging(self):
+        """
+        This function will request charging from the charger given it is in the connected state
+        """
+        try:
+            if sc.WCState == State.CONNECTED_TO_CHARGER:
+                # delay to clear queue'd mouseevents
+                self.setState(State.REQUESTED)
+                data="3,"+str(Inom)+","+str(Vnom)
+                self.send_BLU(listB[0],data)
+                print("requested")
+        except Exception as e:
+            print("Error while sending request:",e)
 
 if __name__ == "__main__":
+    """
+    This statement is for testing the file independently
+    """
     import sys
     # base state
     sc.WCState = State.CHARGER_AVAILABLE
