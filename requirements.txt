@@ -1,5 +1,6 @@
 pickle5==0.0.11
 spidev==3.5
+PyBluez==0.23
 adafruit_circuitpython_busdevice==5.0.6
 pandas==0.23.3+dfsg
 pymongo==3.12.0
