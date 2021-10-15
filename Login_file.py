@@ -116,8 +116,6 @@ class Login(QtWidgets.QDialog):
     def retranslateUi(self):
         """
         This function will reassign some components' textual content
-
-        :param MainWindow: the parent window of the target components
         """
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Login Page"))
