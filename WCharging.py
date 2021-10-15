@@ -142,7 +142,7 @@ class Ui_MainWindow2(object):
 
     def stateUpdate(self):
         """
-        This function is the 'brains' of the state machine on the Wheelchair side.  Each time it is called it update the
+        This function is the 'brains' of the state machine on the Wheelchair side.  Each time it is called it updates the
         relevent GUI components correspponding to the active state as defined by :obj:`StateClass.State`
         """
         # Defaults (QT will update after function corrects these):
@@ -253,6 +253,9 @@ class Ui_MainWindow2(object):
         QtWidgets.qApp.processEvents()
 
     def setState(self,state=State.CHARGER_UNAVAILABLE):
+        """
+        This function sets the state of the Wheelchair and updates components using :obj:`WCharging.Ui_MainWindow2.stateUpdate`
+        """
         sc.WCState = state
 #         qt_helper.DelayAction(0.5,[self.stateUpdate,None]).start()
         self.stateUpdate()

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimerThread.py" beforeDir="false" afterPath="$PROJECT_DIR$/TimerThread.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WCharging.py" beforeDir="false" afterPath="$PROJECT_DIR$/WCharging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WMsgWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/WMsgWindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
