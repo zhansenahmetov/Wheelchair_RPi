@@ -66,10 +66,40 @@
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WCharging.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow2</span></span><a class="headerlink" href="#WCharging.Ui_MainWindow2" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates the main window that is used as the charging ‘tab’</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.ConnectToCharger">
+<span class="sig-name descname"><span class="pre">ConnectToCharger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.ConnectToCharger" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will initiate a connection or disconnect from the charger depending on the current state (this function is directly linked to the connect/disconnect button)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.DisconnectFromCharger">
+<span class="sig-name descname"><span class="pre">DisconnectFromCharger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.DisconnectFromCharger" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will disconnect the Wheelchair from the Charger (may be internally executed from bluetooth instruction in <a class="reference internal" href="#WCharging.Ui_MainWindow2.data_received" title="WCharging.Ui_MainWindow2.data_received"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCharging.Ui_MainWindow2.data_received</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.RequestCharging">
+<span class="sig-name descname"><span class="pre">RequestCharging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.RequestCharging" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will request charging from the charger given it is in the connected state</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.StartStopCharge">
+<span class="sig-name descname"><span class="pre">StartStopCharge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.StartStopCharge" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will Start or stop charging depending on the current state (this function is directly linked to the start/stop button)</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.__weakref__">
 <span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#WCharging.Ui_MainWindow2.__weakref__" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2._readParam">
+<span class="sig-name descname"><span class="pre">_readParam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2._readParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will read the Voltage and Current values from the BMS then update the corresponding LCD elements and battery icon</p>
 </dd></dl>
 
 <dl class="py method">
@@ -106,6 +136,17 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.retranslateUi">
+<span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will reassign some components’ textual content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow2</strong> – parent window of the target components</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.send_BLU">
 <span class="sig-name descname"><span class="pre">send_BLU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.send_BLU" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will send data over an active bluetooth connection</p>
@@ -120,9 +161,80 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setColor">
+<span class="sig-name descname"><span class="pre">setColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will change the color of provided objects, given the rgb values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> – rgb value for red</p></li>
+<li><p><strong>g</strong> – rgb value for green</p></li>
+<li><p><strong>b</strong> – rgb value for blue</p></li>
+<li><p><strong>objs</strong> – objects to change the color of</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setGreen">
+<span class="sig-name descname"><span class="pre">setGreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setGreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will change the color of provided objects to green (rgb: 0, 130, 0), using <a class="reference internal" href="#WCharging.Ui_MainWindow2.setColor" title="WCharging.Ui_MainWindow2.setColor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCharging.Ui_MainWindow2.setColor</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>objs</strong> – objects to change the color of</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setGrey">
+<span class="sig-name descname"><span class="pre">setGrey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setGrey" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will change the color of provided objects to Grey (rgb: 202, 202, 202), using <a class="reference internal" href="#WCharging.Ui_MainWindow2.setColor" title="WCharging.Ui_MainWindow2.setColor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCharging.Ui_MainWindow2.setColor</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>objs</strong> – objects to change the color of</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setRed">
+<span class="sig-name descname"><span class="pre">setRed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setRed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will change the color of provided objects to red (rgb: 222, 0, 0), using <a class="reference internal" href="#WCharging.Ui_MainWindow2.setColor" title="WCharging.Ui_MainWindow2.setColor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCharging.Ui_MainWindow2.setColor</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>objs</strong> – objects to change the color of</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setState">
+<span class="sig-name descname"><span class="pre">setState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">State.CHARGER_UNAVAILABLE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setState" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function sets the state of the Wheelchair and updates components using <a class="reference internal" href="#WCharging.Ui_MainWindow2.stateUpdate" title="WCharging.Ui_MainWindow2.stateUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCharging.Ui_MainWindow2.stateUpdate</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> – The state which the Wheelchair will be set to, available options defined in <a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.setupUi">
+<span class="sig-name descname"><span class="pre">setupUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will set up the UI elements that will be present on this window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>MainWindow2</strong> – the window on which to build the elements</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="WCharging.Ui_MainWindow2.stateUpdate">
 <span class="sig-name descname"><span class="pre">stateUpdate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.stateUpdate" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is the ‘brains’ of the state machine on the Wheelchair side.  Each time it is called it update the
+<dd><p>This function is the ‘brains’ of the state machine on the Wheelchair side.  Each time it is called it updates the
 relevent GUI components correspponding to the active state as defined by <a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a></p>
 </dd></dl>
 
