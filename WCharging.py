@@ -43,6 +43,23 @@ class Ui_MainWindow2(object):
         This function interprets data received over bluetooth connection from the Raspberry Pi on the Charger's side
 
         :param data: numeral instruction corresponding to the established communication lookup table
+
+        ::
+
+            if-else of the numeric data value received:
+                1:  Update state to reflect: Connected to charger
+                2:  Update state to reflect: Charger is busy
+                4:  Update state to reflect: Charging request has been denied
+                5:  Update state to reflect: Charging request has been accepted
+                6:  Update state to reflect: Battery has been plugged in
+                7:  Update state to reflect: 'Start Charging' was successful
+                8:  Update state to reflect: The charger is faulty
+                9:  Update state to reflect: Battery has fully charged
+                10:  Update state to reflect: The battery is faulty
+                11:  Update state to reflect: Charging has been successfully stopped
+                12:  Update state to reflect: Charger is currently unusable due to its Malfunction
+                14:  Update state to reflect: Battery has been unplugged by the user
+
         """
         print(data)
         #tC.join()
@@ -104,7 +121,7 @@ class Ui_MainWindow2(object):
         
         # Battery has been disconncted
         if(int(data)==14):
-            wm.globalMsgWindow.showMsg(duration=3,title="Informational Message",text='Charger has been unplugged by the user!',callback=[listB[1].DisconnectFromCharger,None])
+            wm.globalMsgWindow.showMsg(duration=3,title="Informational Message",text='Battery has been unplugged by the user!',callback=[listB[1].DisconnectFromCharger,None])
             
     def connect_BLU(self,c):
         """
@@ -144,6 +161,40 @@ class Ui_MainWindow2(object):
         """
         This function is the 'brains' of the state machine on the Wheelchair side.  Each time it is called it updates the
         relevent GUI components corresponding to the active state as defined by :obj:`StateClass.State`
+
+        if-else breakdown:
+
+            For States:
+                :obj:`StateClass.State`.CHARGER_UNAVAILABLE
+                :obj:`StateClass.State`.CHARGER_AVAILABLE
+                :obj:`StateClass.State`.CONNECTING_TO_CHARGER
+                :obj:`StateClass.State`.REQUESTED
+                :obj:`StateClass.State`.CHARGER_INCOMPATIBLE
+                :obj:`StateClass.State`.READY_TO_CHARGE
+                :obj:`StateClass.State`.STARTING_CHARGE
+                :obj:`StateClass.State`.CHARGING_IN_PROGRESS
+                :obj:`StateClass.State`.TERMINATED_BY_USER
+                :obj:`StateClass.State`.AWAITING_DISCONNECTION
+                :obj:`StateClass.State`.DISCONNECTING
+
+                    Button colors and status text are updated accordingly \n
+                    In some cases a temporary message box will appear \n
+                    States are changed via external action or interrupt only \n
+
+            For States:
+                :obj:`StateClass.State`.CHARGER_FAULTY
+                :obj:`StateClass.State`.BATTERY_FAULTY
+                :obj:`StateClass.State`.WC_FULLY_CHARGED
+
+                    The button colors and status text are updated \n
+                    Message boxes are always produced \n
+                    The state proceeds to AWAITING_DISCONNECTION after the message box expires \n
+
+            For States:
+                :obj:`StateClass.State`.CONNECTED_TO_CHARGER
+
+                    The button colors and status text are updated \n
+                    State is changed immediately through internal action, to merge the connect and request functionality \n
         """
         # Defaults (QT will update after function corrects these):
 #         self.label_connect.setText("Disconnect")

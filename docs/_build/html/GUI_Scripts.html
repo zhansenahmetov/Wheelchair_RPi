@@ -176,6 +176,21 @@
 <dd class="field-odd"><p><strong>data</strong> – numeral instruction corresponding to the established communication lookup table</p>
 </dd>
 </dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="o">-</span><span class="k">else</span> <span class="n">of</span> <span class="n">the</span> <span class="n">numeric</span> <span class="n">data</span> <span class="n">value</span> <span class="n">received</span><span class="p">:</span>
+    <span class="mi">1</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Connected</span> <span class="n">to</span> <span class="n">charger</span>
+    <span class="mi">2</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Charger</span> <span class="ow">is</span> <span class="n">busy</span>
+    <span class="mi">4</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Charging</span> <span class="n">request</span> <span class="n">has</span> <span class="n">been</span> <span class="n">denied</span>
+    <span class="mi">5</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Charging</span> <span class="n">request</span> <span class="n">has</span> <span class="n">been</span> <span class="n">accepted</span>
+    <span class="mi">6</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Battery</span> <span class="n">has</span> <span class="n">been</span> <span class="n">plugged</span> <span class="ow">in</span>
+    <span class="mi">7</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="s1">&#39;Start Charging&#39;</span> <span class="n">was</span> <span class="n">successful</span>
+    <span class="mi">8</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">The</span> <span class="n">charger</span> <span class="ow">is</span> <span class="n">faulty</span>
+    <span class="mi">9</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Battery</span> <span class="n">has</span> <span class="n">fully</span> <span class="n">charged</span>
+    <span class="mi">10</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">The</span> <span class="n">battery</span> <span class="ow">is</span> <span class="n">faulty</span>
+    <span class="mi">11</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Charging</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">stopped</span>
+    <span class="mi">12</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Charger</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">unusable</span> <span class="n">due</span> <span class="n">to</span> <span class="n">its</span> <span class="n">Malfunction</span>
+    <span class="mi">14</span><span class="p">:</span>  <span class="n">Update</span> <span class="n">state</span> <span class="n">to</span> <span class="n">reflect</span><span class="p">:</span> <span class="n">Battery</span> <span class="n">has</span> <span class="n">been</span> <span class="n">unplugged</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -290,6 +305,43 @@
 <span class="sig-name descname"><span class="pre">stateUpdate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WCharging.Ui_MainWindow2.stateUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is the ‘brains’ of the state machine on the Wheelchair side.  Each time it is called it updates the
 relevent GUI components corresponding to the active state as defined by <a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a></p>
+<p>if-else breakdown:</p>
+<blockquote>
+<div><dl>
+<dt>For States:</dt><dd><p><a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CHARGER_UNAVAILABLE
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CHARGER_AVAILABLE
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CONNECTING_TO_CHARGER
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.REQUESTED
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CHARGER_INCOMPATIBLE
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.READY_TO_CHARGE
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.STARTING_CHARGE
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CHARGING_IN_PROGRESS
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.TERMINATED_BY_USER
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.AWAITING_DISCONNECTION
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.DISCONNECTING</p>
+<blockquote>
+<div><p>Button colors and status text are updated accordingly</p>
+<p>In some cases a temporary message box will appear</p>
+<p>States are changed via external action or interrupt only</p>
+</div></blockquote>
+</dd>
+<dt>For States:</dt><dd><p><a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CHARGER_FAULTY
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.BATTERY_FAULTY
+<a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.WC_FULLY_CHARGED</p>
+<blockquote>
+<div><p>The button colors and status text are updated</p>
+<p>Message boxes are always produced</p>
+<p>The state proceeds to AWAITING_DISCONNECTION after the message box expires</p>
+</div></blockquote>
+</dd>
+<dt>For States:</dt><dd><p><a class="reference internal" href="Helper_funcs.html#StateClass.State" title="StateClass.State"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StateClass.State</span></code></a>.CONNECTED_TO_CHARGER</p>
+<blockquote>
+<div><p>The button colors and status text are updated</p>
+<p>State is changed immediately through internal action, to merge the connect and request functionality</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
