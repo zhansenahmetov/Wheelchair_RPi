@@ -46,19 +46,19 @@ class Ui_MainWindow2(object):
 
         ::
 
-            if-else of the numeric data value received:
-                1:  Update state to reflect: Connected to charger
-                2:  Update state to reflect: Charger is busy
-                4:  Update state to reflect: Charging request has been denied
-                5:  Update state to reflect: Charging request has been accepted
-                6:  Update state to reflect: Battery has been plugged in
-                7:  Update state to reflect: 'Start Charging' was successful
-                8:  Update state to reflect: The charger is faulty
-                9:  Update state to reflect: Battery has fully charged
-                10:  Update state to reflect: The battery is faulty
-                11:  Update state to reflect: Charging has been successfully stopped
-                12:  Update state to reflect: Charger is currently unusable due to its Malfunction
-                14:  Update state to reflect: Battery has been unplugged by the user
+            if-else structure of the numeric data value received:
+                if data = 1:  Update state to reflect: Connected to charger
+                if data = 2:  Update state to reflect: Charger is busy
+                if data = 4:  Update state to reflect: Charging request has been denied
+                if data = 5:  Update state to reflect: Charging request has been accepted
+                if data = 6:  Update state to reflect: Battery has been plugged in
+                if data = 7:  Update state to reflect: The 'Start Charging' request was successful
+                if data = 8:  Update state to reflect: The charger is faulty
+                if data = 9:  Update state to reflect: Battery has fully charged
+                if data = 10:  Update state to reflect: The battery is faulty
+                if data = 11:  Update state to reflect: Charging has been successfully stopped
+                if data = 12:  Update state to reflect: Charger is currently unusable due to its Malfunction
+                if data = 14:  Update state to reflect: Battery has been unplugged by the user
 
         """
         print(data)
