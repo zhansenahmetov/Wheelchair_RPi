@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/WCharging.py" beforeDir="false" afterPath="$PROJECT_DIR$/WCharging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/GUI_Scripts.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/GUI_Scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/searchindex.js" afterDir="false" />
-    </list>
+    <list default="true" id="3d5af590-5c28-4e7b-b5b1-763d6d6dbdcb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

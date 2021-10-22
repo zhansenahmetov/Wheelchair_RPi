@@ -69,4 +69,5 @@ autodoc_mock_imports = ["bluedot",
                         "smbus",
                         "pynmea2",
                         "serial",
-                        "pickle5"]
+                        "pickle5",
+                        "pandas"]
