@@ -61,10 +61,14 @@ except Exception as e:
 # This function should be called in the main code in the get_I2C() function
 def SoC(sd_time, dt, ibat, vbat):
     """
-    This function updates the State Of Charge (SoC)
+    This function updates the State Of Charge (SoC) by integrating over dt
+
     :param sd_time: last shutdown time
+
     :param dt: change in time
+
     :param ibat: current of the battery
+
     :param vbat: voltage of the battery
     """
     global update_once
@@ -127,6 +131,17 @@ def SoC(sd_time, dt, ibat, vbat):
 def get_I2C():
     """
     This function communicates with the IMU, BME680, and BMS sensors over I2C to acquire data
+
+    :param gdt: each gdt seconds the data is obtained from ESP and other sensors
+
+    :param csv_time: each csv_time*gdt seconds the data is save in CSV file
+
+    Each 25*gdt = 5 seconds the data is updated in WriteGUIBMS.txt file, from which the GUI takes the data to show
+    The data saved in WriteGUIBMS.txt file is the data that averaged over 5 seconds, while CSV file data is not average,
+    but simultaneous values
+
+    You can easily make it average if needed by logic
+
     """
     # initalize BMS connection
     # MAC address of ESP32

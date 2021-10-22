@@ -41,17 +41,35 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="main_code.SoC">
 <span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">SoC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sd_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ibat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vbat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main_code.SoC" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function updates the State Of Charge (SoC)
-:param sd_time: last shutdown time
-:param dt: change in time
-:param ibat: current of the battery
-:param vbat: voltage of the battery</p>
+<dd><p>This function updates the State Of Charge (SoC) by integrating over dt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sd_time</strong> – last shutdown time</p></li>
+<li><p><strong>dt</strong> – change in time</p></li>
+<li><p><strong>ibat</strong> – current of the battery</p></li>
+<li><p><strong>vbat</strong> – voltage of the battery</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="main_code.get_I2C">
 <span class="sig-prename descclassname"><span class="pre">main_code.</span></span><span class="sig-name descname"><span class="pre">get_I2C</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main_code.get_I2C" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function communicates with the IMU, BME680, and BMS sensors over I2C to acquire data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gdt</strong> – each gdt seconds the data is obtained from ESP and other sensors</p></li>
+<li><p><strong>csv_time</strong> – each csv_time*gdt seconds the data is save in CSV file</p></li>
+</ul>
+</dd>
+</dl>
+<p>Each 25*gdt = 5 seconds the data is updated in WriteGUIBMS.txt file, from which the GUI takes the data to show
+The data saved in WriteGUIBMS.txt file is the data that averaged over 5 seconds, while CSV file data is not average,
+but simultaneous values</p>
+<p>You can easily make it average if needed by logic</p>
 </dd></dl>
 
 <dl class="py function">
