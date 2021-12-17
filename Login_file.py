@@ -109,7 +109,7 @@ class Login(QtWidgets.QDialog):
 
         #commands
 #         self.loginButton.clicked.connect(self.handleLogin)
-        self.commandLinkButton.clicked.connect(self.registration)
+#        self.commandLinkButton.clicked.connect(self.registration)
 
         self.retranslateUi()
     

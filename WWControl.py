@@ -109,8 +109,8 @@ if __name__ == "__main__":
         clock = Clock(LCD_Objs)
         clock.start()
         with concurrent.futures.ProcessPoolExecutor() as executor:
-            f1 = executor.submit(main_code.get_I2C) #BMI sensors
-            f2 = executor.submit(main_code.get_serial) #gps
+            #f1 = executor.submit(main_code.get_I2C) #BMI sensors
+            #f2 = executor.submit(main_code.get_serial) #gps
             #f4 = executor.submit(main_code.get_ESP) #BMS sensors
             f3 = executor.submit(sys.exit(app.exec_()))
         

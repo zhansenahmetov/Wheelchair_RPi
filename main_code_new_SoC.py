@@ -24,9 +24,9 @@ import subprocess
 #######################################BMS functions#######################################
 
 
-gdt = 0.2 # each gdt seconds the data is taken from esp
-csv_time = 5 #each csv_time*gdt seconds the data is saved into csv
-# if csv_time is 5 and gdt 0.1 then csv file will write every 5*0.1=0.5 seconds
+gdt = 0.2       #each gdt seconds the data is taken from esp
+csv_time = 5    #each csv_time*gdt seconds the data is saved into csv
+#if csv_time is 5 and gdt 0.1 then csv file will write every 5*0.1=0.5 seconds
 
 
 #######################################BMS functions#######################################
@@ -65,7 +65,7 @@ def initialize_SoC(vbat1, vbat2):
     myVar[2] = ((vbat1-vbat2) - p2)/p1   # myVar[2] is the SoC1 (Capacity) of the 1st battery
     myVar[3] = (vbat2 - p2)/p1   # myVar[3] is the SoC2 (Capacity) of the 2nd battery
     print("SoC1 = ", myVar[2], "___SoC2 = ", myVar[3])
-    print("SoC and V_oc are initialized!")
+    #print("SoC and V_oc are initialized!")
 
     # Use dump() to save the updated SoC and open-circuit voltage in the same 
     with open('SoC.pkl', 'wb') as file:
@@ -103,16 +103,16 @@ def SoC(sd_time, dt, ibat, vbat1, vbat2, rest_time, rest_time_limit):
         myVar[1] = vbat2             # myVar[1] is the open-circuit voltage of the 2nd battery
         myVar[2] = ((vbat1-vbat2) - p2)/p1   # myVar[2] is the SoC1 (Capacity) of the 1st battery
         myVar[3] = (vbat2 - p2)/p1   # myVar[3] is the SoC2 (Capacity) of the 2nd battery
-        print("SoC and V_oc are updated!")
+        #print("SoC and V_oc are updated!")
         reset_time = 1
-        print("Battery rest time reset!")
+        #print("Battery rest time reset!")
         
 
     # Estimate and return SoC1 and SoC2
     myVar[2] = myVar[2] - ibat*dt/Q_n
     myVar[3] = myVar[3] - ibat*dt/Q_n
-    print("SoC1 = ", myVar[2])
-    print("SoC2 = ", myVar[3])
+    #print("SoC1 = ", myVar[2])
+    #print("SoC2 = ", myVar[3])
 
     # Use dump() to save the updated SoC and open-circuit voltage in the same 
     with open('SoC.pkl', 'wb') as file:
@@ -258,16 +258,16 @@ def get_I2C():
 
                 #estimates the measurements based on calibration equations
                 #vbat1 = 0.0822*results[0] - 170.06 - 1 #recalibrate
-                vbat1 = round(0.0102*results[0]+1.5068,3)
+                vbat1 = round(0.011*results[0] + 0.8833,3)
                 #vbat2 = 0.0822*results[1] - 170.06 - 1 #recalibrate
-                vbat2 = round(0.0052*results[1]+0.2293,3)
+                vbat2 = round(0.0057*results[1] + 0.1,3)
                 #ibat = -0.0681*results[2] + 139.84 + 1.22 #recalibrate
-                ibat = round(-0.0832*results[2]+111.74-1.08,3)
+                ibat = round(-0.0824*results[2] + 109.8,3)
                 Tbat_1 = round(-0.063*results[3] + 149.71,3)
                 Tbat_2 = round(-0.0668*results[4] + 157.47,3)
                 AmbTemp = round(-0.0383*results[5] + 100.5,3)
                 
-                print("V_bat_1 = ",vbat1,"V_bat_2 = ",vbat2,"I_bat = ",ibat)
+                #print("V_bat_1 = ",vbat1,"V_bat_2 = ",vbat2,"I_bat = ",ibat)
                 #print("T_bat_1 = ",str(Tbat_1),"T_bat_2 = ", str(Tbat_2),"T_amb",
                 #str(AmbTemp),"\n")
                 
@@ -275,9 +275,9 @@ def get_I2C():
                 initialize_SoC(vbat1,vbat2)
                 
                 #Battery rest time estimation (to get true battery OCV)
-                if -0.7<ibat<0.8:
+                if -1<ibat<1:
                     rest_time = rest_time + abs(time.time() - t0)
-                    print("rest_time = ", rest_time)
+                    #print("rest_time = ", rest_time)
                 else:
                     rest_time = 0
                         
@@ -288,13 +288,14 @@ def get_I2C():
                 
                 dt = (time.time()-tx)
                 #print("dt:", round((time.time()-t0),3))
-                print("dt = ",dt)
+                #print("dt = ",dt)
                 
                 
                 SoC_out,SoC_out2,reset_rest_time = SoC(sd_time, 0.2, ibat, vbat1, vbat2, rest_time, 1)
                 SoC_out = round(SoC_out,3)
                 SoC_out2 = round(SoC_out2,3)
-                #print("SOC from esp:", SoC_out)
+                #SoC_FINAL = (SoC_out + SoC_out2)/2
+                #print("SOC from esp:", SoC_FINAL)
                 
                 #print("dt:", round((time.time()-tx),3))
                 tx = time.time() #for SOC dt calculation
@@ -422,7 +423,7 @@ def get_serial():
 
     #initialize serial port for GPS with 115200 baud rate, 5s timeout; GPS updates at 10Hz
     #Changed serial port for GPS with 9600 baud rate, 5s timeout; GPS updates at 10Hz
-    ser = serial.Serial('/dev/serial0', 9600, timeout=5)
+    ser = serial.Serial('/dev/ttyAMA1', 9600, timeout=5)
     print("Connected to: ", '/dev/serial0')
     sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser))
     
@@ -477,17 +478,15 @@ def get_serial():
             lat = 0
             speed = 0
             
-            print("Wrote GPS waypoint!")
+            #print("Wrote GPS waypoint!")
             
 #######################################execution starts here#######################################
+def runProgram():
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+         f1 = executor.submit(get_I2C)
+         f2 = executor.submit(get_serial)
+
+
+runProgram()       #This option will run both get_I2C() and get_serial() in parallel!
 #get_I2C()
-#get_serial()
-# def runProgram():
-#     with concurrent.futures.ProcessPoolExecutor() as executor:
-#          f1 = executor.submit(get_I2C)
-#          f2 = executor.submit(get_serial)
-         #f3 = executor.submit(get_ESP)
-#runProgram()
-#get_ESP()
-get_I2C()
 #get_serial()
